@@ -238,6 +238,7 @@ const NextTopLoader = ({
         const target = event.target as HTMLElement;
         const anchor = findClosestAnchor(target);
         const newUrl = anchor?.href;
+        const isNewTab = event.ctrlKey || event.metaKey;
         if (newUrl) {
           const currentUrl = window.location.href;
           // const newUrl = (anchor as HTMLAnchorElement).href;
@@ -266,6 +267,7 @@ const NextTopLoader = ({
             isAnchorOrHashAnchor ||
             event.ctrlKey ||
             event.metaKey ||
+            isNewTab ||
             event.shiftKey ||
             event.altKey ||
             !toAbsoluteURL(anchor.href).startsWith('http')
