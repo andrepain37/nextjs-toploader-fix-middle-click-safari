@@ -270,6 +270,7 @@ const NextTopLoader = ({
             isNewTab ||
             event.shiftKey ||
             event.altKey ||
+            event.button === 1 ||
             !toAbsoluteURL(anchor.href).startsWith('http')
           ) {
             NProgress.start();
